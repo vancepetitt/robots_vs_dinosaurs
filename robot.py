@@ -10,4 +10,11 @@ class Robot:
         self.description = description
 
     def attack(self, dinosaur):
-        pass
+        
+        dinosaur.health -= self.weapon.attack_power
+
+        if dinosaur.health > 0:
+            print(f'*CLANG...DIRECT HIT* {dinosaur.name} is down to {dinosaur.health} health!')
+
+        elif dinosaur.health <= 0:
+            print(f'{dinosaur.name} lets out one last mighty roar - and then falls in defeat!')

@@ -40,25 +40,50 @@ class Battlefield:
 
         while is_finished == False:
             goes_first = randrange(1,3)
-            if self.herd_1 == [] or self.fleet_1 == []:
+            if len(self.herd_1.herd) == 0 or len(self.fleet_1.fleet) == 0:
                 is_finished = True
                 break
 
             elif goes_first == 1:
                 goes_first = 0
+                print('Dinosaurs attack first!')
                 self.dino_turn()
+                self.robot_turn()
 
             elif goes_first == 2:
                 goes_first = 0
+                print('Robots attack first!')
                 self.robot_turn()
+                self.dino_turn()
         
     def dino_turn(self):
-        print('Dinosaurs attack first!')
+        
+        if self.herd_1.herd[0].health > 0:
+            target = int(input(f'Which robot will {self.herd_1.herd[0].name} attack? '))
+            self.herd_1.herd[0].attack(self.fleet_1.fleet[target])
+ 
+        if self.herd_1.herd[1].health > 0:
+            target = int(input(f'Which robot will {self.herd_1.herd[1].name} attack? '))
+            self.herd_1.herd[1].attack(self.fleet_1.fleet[target])
+        
+        if self.herd_1.herd[2].health > 0:
+            target = int(input(f'Which robot will {self.herd_1.herd[2].name} attack? '))
+            self.herd_1.herd[2].attack(self.fleet_1.fleet[target])
         
 
     def robot_turn(self):
-        print('Robots attack first!')
-
+        
+        if self.fleet_1.fleet[0].health > 0:
+            target = int(input(f'Which dinosaur will {self.fleet_1.fleet[0].name} attack? '))
+            self.fleet_1.fleet[0].attack(self.herd_1.herd[target])
+        
+        if self.fleet_1.fleet[0].health > 0:
+            target = int(input(f'Which dinosaur will {self.fleet_1.fleet[1].name} attack? '))
+            self.fleet_1.fleet[1].attack(self.herd_1.herd[target])
+        
+        if self.fleet_1.fleet[0].health > 0:
+            target = int(input(f'Which dinosaur will {self.fleet_1.fleet[2].name} attack? '))
+            self.fleet_1.fleet[2].attack(self.herd_1.herd[target])
 
     def show_dino_opponent_options(self):
         pass
