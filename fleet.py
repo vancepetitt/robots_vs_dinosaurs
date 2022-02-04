@@ -1,22 +1,39 @@
 from robot import Robot
 from weapon import Weapon
 
-#Robot list
-
-jane = Robot('Titanium Jane', 700, weapon = input('Select a weapon for Titanium Jane: '))
-
-blitz = Robot('Blitz Bot', 500, weapon = input('Select a weapon for Blitz Bot: '))
-
-tank = Robot('X-Tanktron', 1500, weapon = input('Select a weapon for X-Tanktron: '))
-
 class Fleet:
 
     def __init__(self):
-        self.robots = []
+        self.fleet = []
+        self.create_fleet()
 
     def create_fleet(self):
-        self.robots.append(jane)
-        self.robots.append(blitz)
-        self.robots.append(tank)
+        
+#weapons list
+        a = Weapon('Focused Fusion Launcher', 2000)
+
+        b = Weapon('Supercharged Sword', 400)
+
+        c = Weapon('Rocket Fists', 100)
+
+        d = Weapon('Flyswatter', 1)
+
+        e = Weapon('Laser Blasters', 300)
+
+#Robots:
+        robot_1 = Robot('Titanium Jane', 750, e)
+        robot_2 = Robot('Blitz Bot', 500, b)
+
+        robot_3 = Robot('X-Tanktron', 1500, c)
+
+        # print('The robots have mutiple weapons they can use to maximize their dino-saying potential.')
+        # print()
+        # print('When selecting weapons:')
+        # print(' Enter "a" for the ')
+        self.fleet.append(robot_1)
+        self.fleet.append(robot_2)
+        self.fleet.append(robot_3)
+
+
 
 
