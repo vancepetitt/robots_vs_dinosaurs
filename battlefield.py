@@ -58,41 +58,63 @@ class Battlefield:
         
     def dino_turn(self):
         
+        self.show_robot_opponent_options()
+
         if self.herd_1.herd[0].health > 0:
-            target = int(input(f'Which robot will {self.herd_1.herd[0].name} attack? '))
+            target = int(input(f'Which robot will {self.herd_1.herd[0].name} attack? ')) - 1
             self.herd_1.herd[0].attack(self.fleet_1.fleet[target])
  
         if self.herd_1.herd[1].health > 0:
-            target = int(input(f'Which robot will {self.herd_1.herd[1].name} attack? '))
+            target = int(input(f'Which robot will {self.herd_1.herd[1].name} attack? ')) - 1
             self.herd_1.herd[1].attack(self.fleet_1.fleet[target])
         
         if self.herd_1.herd[2].health > 0:
-            target = int(input(f'Which robot will {self.herd_1.herd[2].name} attack? '))
+            target = int(input(f'Which robot will {self.herd_1.herd[2].name} attack? ')) - 1
             self.herd_1.herd[2].attack(self.fleet_1.fleet[target])
         
 
     def robot_turn(self):
         
+        self.show_dino_opponent_options()
+
         if self.fleet_1.fleet[0].health > 0:
-            target = int(input(f'Which dinosaur will {self.fleet_1.fleet[0].name} attack? '))
+            self.show_dino_opponent_options()
+            target = int(input(f'Which dinosaur will {self.fleet_1.fleet[0].name} attack? ')) - 1
             self.fleet_1.fleet[0].attack(self.herd_1.herd[target])
         
         if self.fleet_1.fleet[0].health > 0:
-            target = int(input(f'Which dinosaur will {self.fleet_1.fleet[1].name} attack? '))
+            target = int(input(f'Which dinosaur will {self.fleet_1.fleet[1].name} attack? ')) - 1
             self.fleet_1.fleet[1].attack(self.herd_1.herd[target])
         
         if self.fleet_1.fleet[0].health > 0:
-            target = int(input(f'Which dinosaur will {self.fleet_1.fleet[2].name} attack? '))
+            target = int(input(f'Which dinosaur will {self.fleet_1.fleet[2].name} attack? ')) - 1
             self.fleet_1.fleet[2].attack(self.herd_1.herd[target])
 
     def show_dino_opponent_options(self):
-        pass
+        
+        if self.herd_1.herd[0].health > 0:
+            print(f'Enter "1" to attack {self.herd_1.herd[0].name} ({self.herd_1.herd[0].health} health)')
+        
+        if self.herd_1.herd[1].health > 0:
+            print(f'Enter "2" to attack {self.herd_1.herd[1].name} ({self.herd_1.herd[1].health} health)')
+        
+        if self.herd_1.herd[2].health > 0:
+            print(f'Enter "3" to attack {self.herd_1.herd[2].name} ({self.herd_1.herd[2].health} health)')
 
     def show_robot_opponent_options(self):
-        pass
+        
+        if self.fleet_1.fleet[0].health > 0:
+            print(f'Enter "1" to attack {self.fleet_1.fleet[0].name} ({self.fleet_1.fleet[0].health} health)')
+        
+        if self.fleet_1.fleet[1].health > 0:
+            print(f'Enter "2" to attack {self.fleet_1.fleet[1].name} ({self.fleet_1.fleet[1].health} health)')
+        
+        if self.fleet_1.fleet[2].health > 0:
+            print(f'Enter "3" to attack {self.fleet_1.fleet[2].name} ({self.fleet_1.fleet[2].health} health)')
+
 
     def display_winners(self):
-        if self.herd_1 == []:
+        if len(self.herd_1) == 0:
             print('ROBOTS WIN!')
-        elif self.fleet_1 == []:
+        elif len(self.fleet_1) == 0:
             print('DINOSAURS WIN!')
