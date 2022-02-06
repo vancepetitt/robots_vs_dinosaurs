@@ -15,10 +15,12 @@ class Dinosaur:
         robot.health -= self.attack_power
 
         if robot.health > 0:
-            print(f'{self.name} lands a prehistoric punch! {robot.name} is down to {robot.health} health!')
+            print(f'\n{self.name} lands a prehistoric punch! {robot.name} is down to {robot.health} health!\n')
+            print('--------------------------------------\n')
 
         elif robot.health <= 0:
-            print(f'With a shower of sparks and grinding gears, {robot.name} powers down... for the last time!')
+            print(f'\nWith a shower of sparks and grinding gears, {robot.name} powers down... for the last time!\n')
+            print('--------------------------------------\n')
             
 
 
