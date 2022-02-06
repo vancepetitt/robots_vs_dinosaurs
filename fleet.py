@@ -10,15 +10,15 @@ class Fleet:
     def create_fleet(self):
         
 #weapons list
-        a = Weapon('Focused Fusion Launcher', 2000)
+        a = Weapon('Focused Fusion Launcher', 2000, 15)
 
-        b = Weapon('Supercharged Sword', 400)
+        b = Weapon('Supercharged Sword', 400, 90)
 
-        c = Weapon('Micro-Missile', 100)
+        c = Weapon('Micro-Missile', 150, 100)
 
-        d = Weapon('Flyswatter', 1)
+        d = Weapon('Flyswatter', 1, 100)
 
-        e = Weapon('Laser Blasters', 300)
+        e = Weapon('Laser Blasters', 300, 75)
 
 #Robots:
         robot_2 = Robot('Titanium Jane', 750, e, 'A robot who eats dinosaurs for breakfast! With titanium plating and repeating laser blasters, this heavy-metal heroine will blow you away!')
