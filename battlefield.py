@@ -42,7 +42,7 @@ class Battlefield:
 
         while is_finished == False:
             goes_first = randrange(1,3)
-            if self.fleet_1.fleet[0].health <= 0 and self.fleet_1.fleet[1].health <= 0 and self.fleet_1.fleet[1].health <=0:
+            if self.fleet_1.fleet[0].health <= 0 and self.fleet_1.fleet[1].health <= 0 and self.fleet_1.fleet[2].health <=0:
                 is_finished = True
                 self.display_dinosaur_winners()
 
@@ -51,25 +51,24 @@ class Battlefield:
                 self.display_robot_winners()
 
             elif goes_first == 1:
-                goes_first = 0
                 print(f'TURN {turn_count}')
                 turn_count += 1
                 print('Dinosaurs attack first!\n')
                 self.dino_turn()
                 self.robot_turn()
+                goes_first = 0
 
             elif goes_first == 2:
-                goes_first = 0
                 print(f'TURN {turn_count}')
                 turn_count += 1
                 print('Robots attack first!\n')
                 self.robot_turn()
                 self.dino_turn()
+                goes_first = 0
+
         
     def dino_turn(self):
         
-
-
         if self.herd_1.herd[0].health > 0:
             self.show_robot_opponent_options()
             target = int(input(f'\nWhich robot will {self.herd_1.herd[0].name} attack? ')) - 1
@@ -83,7 +82,7 @@ class Battlefield:
         if  self.herd_1.herd[2].health > 0:
             self.show_robot_opponent_options()
             target = int(input(f'\nWhich robot will {self.herd_1.herd[2].name} attack? ')) - 1
-            self.herd_1.herd[2].attack(self.fleet_1.fleet[target])
+            self.herd_1.herd[2].attack(self.fleet_1.fleet[target])     
 
         
 
