@@ -16,6 +16,7 @@ class Robot:
 
         if attempt > self.weapon.accuracy:
             print(f'\n{self.name} misses the attack!\n')
+            print('--------------------------------------\n')
         
         if attempt <= self.weapon.accuracy:         
             dinosaur.health -= self.weapon.attack_power
@@ -23,6 +24,7 @@ class Robot:
         if self.name == 'Titanium Jane':
             dinosaur.health -= 100
             print(f"Titanium Jane's shoulder blasters fire at the target! {dinosaur.name} is down to {dinosaur.health} health!\n")
+            print('--------------------------------------\n')            
 
         if attempt <= self.weapon.accuracy and dinosaur.health > 0:
             print(f'\n*CLANG...DIRECT HIT* {dinosaur.name} is down to {dinosaur.health} health!\n')

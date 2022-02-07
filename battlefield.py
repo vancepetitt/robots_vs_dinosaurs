@@ -80,16 +80,19 @@ class Battlefield:
                 self.show_robot_opponent_options()
                 target = int(input(f'\nWhich robot will {self.herd_1.herd[0].name} attack? ')) - 1
                 self.herd_1.herd[0].attack(self.fleet_1.fleet[target])
+                input('')
     
             if  self.herd_1.herd[1].health > 0:
                 self.show_robot_opponent_options()
                 target = int(input(f'\nWhich robot will {self.herd_1.herd[1].name} attack? ')) - 1
                 self.herd_1.herd[1].attack(self.fleet_1.fleet[target])
+                input('')
             
             if  self.herd_1.herd[2].health > 0:
                 self.show_robot_opponent_options()
                 target = int(input(f'\nWhich robot will {self.herd_1.herd[2].name} attack? ')) - 1
                 self.herd_1.herd[2].attack(self.fleet_1.fleet[target])
+                input('')
 
             dino_turn_over = True
 
@@ -109,16 +112,19 @@ class Battlefield:
                 self.show_dino_opponent_options()
                 target = int(input(f'\nWhich dinosaur will {self.fleet_1.fleet[0].name} attack? ')) - 1
                 self.fleet_1.fleet[0].attack(self.herd_1.herd[target])
+                input('')
             
             if  self.fleet_1.fleet[1].health > 0:
                 self.show_dino_opponent_options()
                 target = int(input(f'\nWhich dinosaur will {self.fleet_1.fleet[1].name} attack? ')) - 1
                 self.fleet_1.fleet[1].attack(self.herd_1.herd[target])
+                input('')
             
             if  self.fleet_1.fleet[2].health > 0:
                 self.show_dino_opponent_options()
                 target = int(input(f'\nWhich dinosaur will {self.fleet_1.fleet[2].name} attack? ')) - 1
                 self.fleet_1.fleet[2].attack(self.herd_1.herd[target])
+                input('')
 
             robot_turn_over = True
 

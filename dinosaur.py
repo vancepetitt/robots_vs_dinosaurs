@@ -17,6 +17,7 @@ class Dinosaur:
 
         if attempt > self.accuracy:
             print(f'\n{self.name} misses the attack!\n')
+            print('--------------------------------------\n')
         
         if attempt <= self.accuracy:         
             robot.health -= self.attack_power
