@@ -19,24 +19,26 @@ class Battlefield:
         print('******************************************************')
         print('ARE YOU READY TO RUMBLE!?')
         print('Today you have front row seats to a battle for the ages. The ROBOTS of THE FLEET are set to take on the DINOSAURS of THE LOST HERD!\nBefore we get started - lets introduce both teams...\n')
-#        input('')
+        input('')
 
     def dino_team_intro(self):
         print('Fighting for the DINOSAURS...\n')
         print(f'{self.herd_1.herd[0].name}: {self.herd_1.herd[0].description}')
         print(f'{self.herd_1.herd[1].name}: {self.herd_1.herd[1].description}')
         print(f'{self.herd_1.herd[2].name}: {self.herd_1.herd[2].description}')
-#        input('')
+        input('')
 
     def robot_team_intro(self):
         print('Fighting for the ROBOTS...\n')
         print(f'{self.fleet_1.fleet[0].name}: {self.fleet_1.fleet[0].description}')
         print(f'{self.fleet_1.fleet[1].name}: {self.fleet_1.fleet[1].description}')
         print(f'{self.fleet_1.fleet[2].name}: {self.fleet_1.fleet[2].description}')
-#        input('')
+        input('')
 
     def battle(self):
         
+        print('*DING *DING *DING - LETS FIGHT!!')
+        input('')
         is_finished = False
         turn_count = 1
 
@@ -161,8 +163,8 @@ class Battlefield:
                 break
 
 
-    def display_robot_winners(self):
-            print('ROBOTS WIN!')
+    def display_robot_winners(self):        
+        print("As the dinosaur goes down, the robots scan their surroundings in an assessment.... the ROBOTS WIN!!!\n After a hard-earned victory, the robots pick up their scattered pieces for a well-deserved repair.\nTime to go back to the fleet and let everyone know just who the baddest 'bots around are!")
 
     def display_dinosaur_winners(self):
-            print('DINOSAURS WIN!')
+        print('As the infernal machine clatters down in a pile of scrap, a victory roar echoes across the battlefield - the DINOSAURS WIN!!!\nAfter a hard-fought victory, the dinos really showed those cyborg chumps not to mess with the Lost Herd. The winners head back for a prehistoric victory party and Brontosaurus Brewskis!')
